@@ -54,7 +54,7 @@ class Sort:
 
     # get the maximum number of digits
     # among any number in the input list
-    def get_max_num_digits(lst):
+    def get_max_num_digits(self, lst):
         # Task 2, Step 1
         max_digits = 0
         for num in lst:
@@ -71,15 +71,12 @@ class Sort:
     # their least significant digit
     def list_to_buckets(self, lst):
         # Task 2, Step 2
-        buckets = Sort.get_new_buckets(10)
+        buckets = self.get_new_buckets(10)
         for num in lst:
             digit_val = self.digit(num, 0)  # Check if 'num' is correctly an integer
             buckets[digit_val].append(num)
             self.moves += 1  # Increment moves counter for each appended element
         return buckets
-
-
-
 
     # converts a list of buckets
     # into a one-dimensional list
@@ -94,10 +91,10 @@ class Sort:
     # them to buckets according to their digits
     def radix_sort(self, lst):
         # Task 2, Step 4
-        max_digits = Sort.get_max_num_digits(lst)
+        max_digits = self.get_max_num_digits(lst)
         
         for digit_place in range(max_digits):
-            buckets = Sort.list_to_buckets(lst, 10)  # Pass the radix argument here
+            buckets = self.list_to_buckets(lst)  # Remove the second argument
             lst = self.buckets_to_list(buckets)
         
         return lst  # Return the sorted list
