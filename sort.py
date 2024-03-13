@@ -39,13 +39,13 @@ class Sort:
     # returns the nth digit of num,
     # where digit 0 is the least significant digit
     # e.g.: digit(1234, 0) -> 4
-    def digit(num, n):
+    def digit(self, num, n):
         return int(num // 10 ** n % 10)
 
     # returns a list of buckets of order radix
     # e.g.: get_new_buckets(10) will return a
     # 2D list of 10 empty lists: [ [], [], [], ... ]
-    def get_new_buckets(radix=10):
+    def get_new_buckets(radix):
         buckets = []
         for i in range(radix):
             buckets.append([])
@@ -70,11 +70,13 @@ class Sort:
     # their least significant digit
     def list_to_buckets(self, lst):
         # Task 2, Step 2
-        buckets = self.get_new_buckets()
+        buckets = self.get_new_buckets(10)
         for num in lst:
-            digit_val = self.digit(num, 0)
+            digit_val = self.digit(num, 0)  # Check if 'num' is correctly an integer
             buckets[digit_val].append(num)
         return buckets
+
+
 
 
     # converts a list of buckets

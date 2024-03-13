@@ -40,30 +40,19 @@ if __name__ == "__main__":
     sort = Sort()
 
     # sort a random list of length 1000
-    # print("testing mystery sort on a random list")
-    # lst = random_list(1000) 
-    # sort.mystery_sort(lst)
-    # comps = sort.get_comps()
-    # moves = sort.get_moves()
-    # print("  comps: %s; moves: %s" % (str(comps), str(moves)))
-    # sort.reset_stats()
-
-    # # sort an almost-sorted list of length 1000
-    # print("testing mystery sort on an almost sorted list")
-    # lst = almost_sorted_list(1000)
-    # sort.mystery_sort(lst)
-    # comps = sort.get_comps()
-    # moves = sort.get_moves()
-    # print("  comps: %s; moves: %s" % (str(comps), str(moves)))
-    # sort.reset_stats()
-
-    # sort a random list of length 1000
     print("testing mystery sort on a random list")
     lst = random_list(1000) 
     sort.mystery_sort(lst)
     comps = sort.get_comps()
     moves = sort.get_moves()
-    print(Sort.get_max_num_digits(lst))
-    print(sort.radix_sort(lst))
+    print("  comps: %s; moves: %s" % (str(comps), str(moves)))
+    sort.reset_stats()
+
+    # sort an almost-sorted list of length 1000
+    print("testing mystery sort on an almost sorted list")
+    lst = almost_sorted_list(1000)
+    sort.mystery_sort(lst)
+    comps = sort.get_comps()
+    moves = sort.get_moves()
     print("  comps: %s; moves: %s" % (str(comps), str(moves)))
     sort.reset_stats()
