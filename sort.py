@@ -54,7 +54,7 @@ class Sort:
 
     # get the maximum number of digits
     # among any number in the input list
-    def get_max_num_digits(lst):  # Add 'self' here
+    def get_max_num_digits(lst):
         # Task 2, Step 1
         max_digits = 0
         for num in lst:
@@ -65,8 +65,6 @@ class Sort:
             if num_digits > max_digits:
                 max_digits = num_digits
         return max_digits
-
-
 
     # converts a list of numbers to a list
     # of buckets, with entries sorted by
@@ -103,4 +101,3 @@ class Sort:
             lst = self.buckets_to_list(buckets)
         
         return lst  # Return the sorted list
-
