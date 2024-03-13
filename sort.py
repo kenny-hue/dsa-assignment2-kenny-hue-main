@@ -54,7 +54,7 @@ class Sort:
 
     # get the maximum number of digits
     # among any number in the input list
-    def get_max_num_digits(self, lst):
+    def get_max_num_digits(lst):
         # Task 2, Step 1
         max_digits = 0
         for num in lst:
