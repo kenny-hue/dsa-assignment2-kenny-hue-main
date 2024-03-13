@@ -75,6 +75,7 @@ class Sort:
         for num in lst:
             digit_val = self.digit(num, 0)  # Check if 'num' is correctly an integer
             buckets[digit_val].append(num)
+            self.moves += 1  # Increment moves counter for each appended element
         return buckets
 
 
