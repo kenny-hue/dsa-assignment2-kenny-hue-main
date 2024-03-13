@@ -60,7 +60,7 @@ class Sort:
         for num in lst:
             num_digits = 1
             while num >= 10:
-                num /= 10
+                num //= 10
                 num_digits += 1
             if num_digits > max_digits:
                 max_digits = num_digits
