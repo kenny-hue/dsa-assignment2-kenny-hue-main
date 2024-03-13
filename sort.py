@@ -97,7 +97,7 @@ class Sort:
         max_digits = Sort.get_max_num_digits(lst)
         
         for digit_place in range(max_digits):
-            buckets = self.list_to_buckets(lst, 10)  # Pass the radix argument here
+            buckets = Sort.list_to_buckets(lst, 10)  # Pass the radix argument here
             lst = self.buckets_to_list(buckets)
         
         return lst  # Return the sorted list
