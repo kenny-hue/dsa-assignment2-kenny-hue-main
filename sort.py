@@ -45,7 +45,7 @@ class Sort:
     # returns a list of buckets of order radix
     # e.g.: get_new_buckets(10) will return a
     # 2D list of 10 empty lists: [ [], [], [], ... ]
-    def get_new_buckets(radix):
+    def get_new_buckets(radix=10):
         buckets = []
         for i in range(radix):
             buckets.append([])
@@ -68,9 +68,9 @@ class Sort:
     # converts a list of numbers to a list
     # of buckets, with entries sorted by
     # their least significant digit
-    def list_to_buckets(self, lst, radix):
+    def list_to_buckets(self, lst):
         # Task 2, Step 2
-        buckets = self.get_new_buckets(radix)
+        buckets = self.get_new_buckets()
         for num in lst:
             digit_val = self.digit(num, 0)
             buckets[digit_val].append(num)
