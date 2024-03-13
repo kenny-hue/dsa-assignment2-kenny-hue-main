@@ -71,7 +71,7 @@ class Sort:
     # their least significant digit
     def list_to_buckets(self, lst):
         # Task 2, Step 2
-        buckets = self.get_new_buckets(10)
+        buckets = Sort.get_new_buckets(10)
         for num in lst:
             digit_val = self.digit(num, 0)  # Check if 'num' is correctly an integer
             buckets[digit_val].append(num)
