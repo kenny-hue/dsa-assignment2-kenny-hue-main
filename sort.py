@@ -68,13 +68,14 @@ class Sort:
     # converts a list of numbers to a list
     # of buckets, with entries sorted by
     # their least significant digit
-    def list_to_buckets(self, lst):
+    def list_to_buckets(self, lst, radix):
         # Task 2, Step 2
-        buckets = self.get_new_buckets(10)
+        buckets = self.get_new_buckets(radix)
         for num in lst:
             digit_val = self.digit(num, 0)
             buckets[digit_val].append(num)
         return buckets
+
 
     # converts a list of buckets
     # into a one-dimensional list
@@ -89,10 +90,11 @@ class Sort:
     # them to buckets according to their digits
     def radix_sort(self, lst):
         # Task 2, Step 4
-        max_digits = Sort.get_max_num_digits(lst)
+        max_digits = self.get_max_num_digits(lst)
         
         for digit_place in range(max_digits):
-            buckets = self.list_to_buckets(lst)
+            buckets = self.list_to_buckets(lst, 10)  # Pass the radix argument here
             lst = self.buckets_to_list(buckets)
         
         return lst  # Return the sorted list
+
