@@ -45,6 +45,7 @@ class Sort:
     # returns a list of buckets of order radix
     # e.g.: get_new_buckets(10) will return a
     # 2D list of 10 empty lists: [ [], [], [], ... ]
+    @staticmethod
     def get_new_buckets(radix):
         buckets = []
         for i in range(radix):
