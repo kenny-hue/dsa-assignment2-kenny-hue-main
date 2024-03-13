@@ -54,7 +54,7 @@ class Sort:
 
     # get the maximum number of digits
     # among any number in the input list
-    def get_max_num_digits(self, lst):  # Add 'self' parameter here
+    def get_max_num_digits(self, lst):  # Add 'self' here
         # Task 2, Step 1
         max_digits = 0
         for num in lst:
@@ -65,6 +65,7 @@ class Sort:
             if num_digits > max_digits:
                 max_digits = num_digits
         return max_digits
+
 
 
     # converts a list of numbers to a list
@@ -95,7 +96,7 @@ class Sort:
     # them to buckets according to their digits
     def radix_sort(self, lst):
         # Task 2, Step 4
-        max_digits = self.get_max_num_digits(lst)
+        max_digits = Sort.get_max_num_digits(lst)
         
         for digit_place in range(max_digits):
             buckets = self.list_to_buckets(lst, 10)  # Pass the radix argument here
