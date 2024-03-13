@@ -89,13 +89,10 @@ class Sort:
     # them to buckets according to their digits
     def radix_sort(self, lst):
         # Task 2, Step 4
-        max_digits = self.get_max_num_digits(lst)
-
+        max_digits = Sort.get_max_num_digits(lst)
+        
         for digit_place in range(max_digits):
-            buckets = self.list_to_buckets(lst, digit_place)
+            buckets = self.list_to_buckets(lst)
             lst = self.buckets_to_list(buckets)
+        
         return lst  # Return the sorted list
-
-
-print(Sort.get_max_num_digits([55, 101, 1111, 5, 999, 98]))
-print(Sort.buckets_to_list([ [3, 5, 9], [25], [], [40], [51, 53], [], [], [88], [91] ]))
