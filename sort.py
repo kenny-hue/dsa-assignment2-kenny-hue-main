@@ -73,7 +73,7 @@ class Sort:
         # Task 2, Step 2
         buckets = self.get_new_buckets(10)
         for num in lst:
-            digit_val = self.digit(num, 0)  # Check if 'num' is correctly an integer
+            digit_val = self.digit(num, 0)
             buckets[digit_val].append(num)
             self.moves += 1  # Increment moves counter for each appended element
         return buckets
@@ -91,10 +91,10 @@ class Sort:
     # them to buckets according to their digits
     def radix_sort(self, lst):
         # Task 2, Step 4
-        max_digits = self.get_max_num_digits(lst)
+        max_digits = Sort.get_max_num_digits(lst)
         
         for digit_place in range(max_digits):
-            buckets = self.list_to_buckets(lst)  # Remove the second argument
+            buckets = self.list_to_buckets(lst)
             lst = self.buckets_to_list(buckets)
         
         return lst  # Return the sorted list
